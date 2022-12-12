@@ -20,7 +20,7 @@ app.use("/notes", NoteRouter);
 console.log(process.env.name)
 
 app.get("/", (req, res) => {
-  res.send({ msg: "Welcome" });
+  res.send({ msg: `welcome Mr. ${process.env.NAME}` });
 });
 
 app.get("/about", (req, res) => {
