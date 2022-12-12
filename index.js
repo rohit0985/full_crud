@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 var jwt = require("jsonwebtoken");
 var cors = require('cors')
+require("dotenv").config()
 
 
 const { connection } = require("./config/db");
@@ -15,6 +16,8 @@ app.use(cors({
 }))
 app.use("/users", UserRouter);
 app.use("/notes", NoteRouter);
+
+console.log(process.env.name)
 
 app.get("/", (req, res) => {
   res.send({ msg: "Welcome" });
